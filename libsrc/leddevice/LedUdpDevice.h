@@ -3,7 +3,7 @@
 #include <QUdpSocket>
 
 // Linux-SPI includes
-#ifndef ENABLE_OSX
+#ifdef __GLIBC__
 #include <linux/spi/spidev.h>
 #endif
 
