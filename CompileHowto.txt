@@ -42,11 +42,10 @@ sudo port install qt4-mac
 sudo port install cmake
 #sudo port install libusb
 #for brew:
-sudo brew install qt4-mac
-sudo brew install cmake
-#sudo brew install libusb
-cmake -DENABLE_DISPMANX=OFF -DENABLE_SPIDEV=OFF -DENABLE_V4L2=OFF -DENABLE_OSX=ON ..
-
+brew install qt5
+brew install cmake
+brew install libusb
+cmake -DENABLE_QT5=ON -DENABLE_DISPMANX=OFF -DENABLE_SPIDEV=OFF -DENABLE_V4L2=OFF -DENABLE_OSX=ON ..
 # run make to build Hyperion
 make -j $(nproc)
 
