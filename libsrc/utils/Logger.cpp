@@ -62,7 +62,11 @@ Logger::Logger ( std::string name, LogLevel minLevel ):
 	
 	if (_syslogEnabled && loggerCount == 1 )
 	{
+		#ifndef ENABLE_OSX
 		openlog (program_invocation_short_name, LOG_CONS | LOG_PID | LOG_NDELAY, LOG_LOCAL0);
+		#else
+		openlog (getprogname(), LOG_CONS | LOG_PID | LOG_NDELAY, LOG_LOCAL0);
+		#endif
 	}
 }
 
