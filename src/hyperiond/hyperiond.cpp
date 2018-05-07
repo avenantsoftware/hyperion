@@ -64,7 +64,9 @@
 #include <boblightserver/BoblightServer.h>
 #include <webconfig/WebConfig.h>
 
-#include <sys/prctl.h> 
+#ifndef ENABLE_OSX
+#include <sys/prctl.h>
+#endif
 #include <utils/Logger.h>
 
 using namespace vlofgren;
@@ -74,8 +76,9 @@ using namespace vlofgren;
 
 // BoblightServer includes
 #include <boblightserver/BoblightServer.h>
+#ifndef ENABLE_OSX
 #include <sys/prctl.h> 
-
+#endif
 using namespace vlofgren;
 
 void signal_handler(const int signum)
