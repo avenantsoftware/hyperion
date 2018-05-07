@@ -3,7 +3,9 @@
 #include <QUdpSocket>
 
 // Linux-SPI includes
+#ifndef ENABLE_OSX
 #include <linux/spi/spidev.h>
+#endif
 
 // Hyperion includes
 #include <leddevice/LedDevice.h>
